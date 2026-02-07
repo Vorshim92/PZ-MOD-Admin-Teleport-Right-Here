@@ -58,3 +58,4 @@ local function AdminTeleportContextMenu(player, context, worldobjects, test)
 end
 
 Events.OnFillWorldObjectContextMenu.Add(AdminTeleportContextMenu)
+-- Debug console one-liner: Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldobjects) local sq; for i,v in ipairs(worldobjects) do sq = v:getSquare(); break end; local x,y,z = sq:getX(), sq:getY(), sq:getZ(); context:addOptionOnTop("Teleport Here", getSpecificPlayer(player), function(a, xx, yy, zz) a:setX(xx); a:setY(yy); a:setZ(zz); a:setLastX(xx); a:setLastY(yy); a:setLastZ(zz) end, x, y, z) end)
